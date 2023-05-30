@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins' , 'Segoe UI';
+}
+body{
+    background: linear-gradient(130deg, #60608a -20%, #262544);
+    min-height: 110vh;
+}
+/* ---------------------header styling---------------------------- */
+.container{
+    width: 70%;
+    margin: 10% 0% 3% 15%;
+}
+header{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #EEEEEF;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+header p{
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+}
+@media (max-width: 820px){
+    .container{
+        width: 85%;
+        margin: 10% 0% 5% 8%;
+    }
+    h1{
+        font-size: 26px;
+    }
+    header p{
+        font-size: 14px;
+    }
+    select option{
+        font-size: 9px;
+    }
+}
+
+/* -----------------the actual form styling------------------- */
+
+form{
+    background-color: rgb(255, 255, 255);
+    padding: 40px 30px 50px 30px;
+    border-radius: 15px;
+    color: #272645;
+    font-weight: 500;
+}
+
+/*---------------all the label styling----------------------  */
+#nameLabel{
+    display: block;
+}
+#emailLabel{
+    display: block;
+}
+#numberLabel{
+    display: block;
+}
+label{
+    display: block;
+    color: #272645;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+.clue{
+    font-size: 14px;
+}
+.inputSpan{
+    font-size: 12px;
+    font-weight: 400;
+    color: red;
+}
+#para{
+    color: #272645;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    
+}
+.par{
+    margin-bottom: 10px;
+}
+/* ---------------end of label styling-------------- */
+
+.formGroup{
+    margin-bottom: 20px;
+}
+.formInput{
+    margin-top: 6px;
+    padding: 5px 5px;
+    font-size: 15px;
+    color: #272645;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #272645;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#contactName{
+    width: 98%;
+}
+#email{
+    width: 98%;
+}
+#phone{
+    width: 98%;
+}
+#number{
+    width: 98%;
+}
+.formInput:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.inputTextarea{
+    margin-top: 6px;
+    padding: 5px 5px;
+    font-size: 15px;
+    color: #272645;
+    min-height: 120px;
+    min-width: 98%;
+    resize: vertical;
+    border-radius: 5px;
+}
+.inputRadio, .inputCheckbox {
+    display: inline-block;
+    margin-right: 0.625rem;
+    margin-bottom: 19px;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+}
+.submitButton {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgb(58, 143, 58);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+span i{
+    color: seagreen;
+    padding-top: 15px;
+}

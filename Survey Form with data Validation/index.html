@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;500&family=EB+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@100;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/71f6d42350.js" crossorigin="anonymous"></script>
+        <script defer src="/script.js"></script>
+        <title>Survey Form Validation</title>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <!-- ---------------- survey head content------------------------->
+
+            <header>
+                <h1>Survey Form Validation</h1>
+                <p>Thank you for taking the time to help us improve the platform</p>
+            </header>
+        
+            <!-- -------------survey form content------------------------------>
+
+            <form id="surveyForm">
+
+                <!-- -------------first form group------------------------------>
+                <div class="formGroup">
+                    <label id="nameLabel" for="name">Full Name</label>
+                    <input type="text" class="formInput" id="contactName" onkeyup="validateName()" placeholder="Enter your name" required>
+
+                    <span class="inputSpan" id="nameError"></span>
+                </div>
+
+                <!-- -------------second form group------------------------------>
+                <div class="formGroup">
+                    <label id="phoneLabel" for="phone">Phone</label>
+                    <input type="tel" class="formInput" id="phone" onkeyup="validatePhone()" placeholder="0808 080 6799" required>
+
+                    <span class="inputSpan" id="phoneError"></span>
+                </div>
+
+                <!-- -------------third form group------------------------------>
+
+                <div class="formGroup">
+                    <label id="emailLabel" for="email">Email</label>
+                    <input type="text" class="formInput" id="email" onkeyup="validateEmail()" placeholder="Enter your Email" required>
+
+                    <span class="inputSpan" id="emailError"></span>
+                </div>
+
+                <!-- -------------third form group------------------------------>
+                <div class="formGroup">
+                    <label id="numberLabel" for="number">Age <span class="clue">(optional)</span></label>
+                    <input type="number" min="10" max="99" class="formInput" id="number"  onkeyup="validateAge()" placeholder="Age">
+
+                    <span class="inputSpan" id="ageError"></span>
+                </div>
+
+                <!-- -------------fourth form group------------------------------>
+                <div class="formGroup">
+                    <p id="para">Which option best describes you currently?</p>
+
+                    <select name="currently" id="dropdown" onkeyup="validateDropdown()" class="formInput" required>
+                        <option selected disabled value="">Employment Status</option>
+                        <option value="student">Student</option>
+                        <option value="job1">Self-Employed</option>
+                        <option value="job2">Unemployed</option>
+                        <option value="preferNo">Prefer not to say</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <span class="inputSpan" id="dropdownError"></span>
+                </div>
+
+                <!-- -------------fifth form group------------------------------>
+                <div class="formGroup">
+                    <p id="para" class="par">Would you quit your job for a dinner with the President?</p>
+                    
+                    <label><input type="radio" value="definitely" name="userRecommend" class="inputRadio" checked>Definitely</label>
+                    <label><input type="radio" value="maybe" name="userRecommend" class="inputRadio">Maybe</label>
+                    <label><input type="radio" value="notSure" name="userRecommend" class="inputRadio">Not sure</label>
+                    <label><input type="radio" value="nope" name="userRecommend" class="inputRadio">Never</label>
+                </div>
+                
+                <!-- -------------fifth form group------------------------------>
+                <div class="formGroup">
+                    <p id="para">What do you love most about your Country?</p>
+                    
+                    <select name=love-most" id="loveMost" class="formInput" required>
+                        <option selected disabled value>Select an option</option>
+                        <option value="sports">Sports</option>
+                        <option value="projects">Country's Projects</option>
+                        <option value="community">Community</option>
+                        <option value="hate">I hate my Country</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <span class="inputSpan" id="lovemostError"></span>
+                </div>
+                
+                <!-- ------------sixth form group------------------------------>
+                <div class="formGroup" id="checkboxSect">
+                    <p id="para" class="par">What would you like to see improved? <span class="clue">(check all that apply)</span></p>
+
+                    <label><input type="checkbox" value="health" name="prefer" class="inputCheckbox" checked>Health Commodities</label>
+                    <label><input type="checkbox" value="housing" name="prefer" class="inputCheckbox">Housing and Shelter commodities</label>
+                    <label><input type="checkbox" value="food" name="prefer" class="inputCheckbox">Food Production</label>
+                    <label><input type="checkbox" value="money" name="prefer" class="inputCheckbox">Money Circulation</label>
+                    <label><input type="checkbox" value="agric" name="prefer" class="inputCheckbox">Agriculture</label>
+                    <label><input type="checkbox" value="equality" name="prefer" class="inputCheckbox">Equality between tribes</label>
+                    <label><input type="checkbox" value="city" name="prefer" class="inputCheckbox">City Development</label>
+                    <label><input type="checkbox" value="schools" name="prefer" class="inputCheckbox">Schools Development</label>
+                    <label><input type="checkbox" value="pension" name="prefer" class="inputCheckbox">Pension system</label>
+                    <label><input type="checkbox" value="youths" name="prefer" class="inputCheckbox">Youth Empowerment</label>
+                </div>
+                
+                <!-- ------------seventh form group------------------------------>
+                <div class="formGroup">
+                    <p id="para">Any comments or suggestions?</p>
+                    <textarea name="Message" id="message" onkeyup="validateMessage()" class="inputTextarea" placeholder="Enter your comment here..."></textarea>
+
+                    <span class="inputSpan" id="messageError"></span>
+                </div>
+                
+                <!-- ------------final form group------------------------------>
+                <div class="formGroup">
+                    <button type="submit" id="submit" class="submitButton" onclick="return validateForm()">Submit</button>
+                    
+                    <span class="inputSpan" id="submitError"></span>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
